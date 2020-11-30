@@ -4,12 +4,12 @@ This pipeline holds an automated method to analyze mitotype data for a tonsa bas
 
 View the help file with: `./mitotype_pipeline.sh --help` or `./mitotype_pipeline.sh -h`
 
+This currently lives at: `/data/copepods/mitotypes` and should be executable by everyone in the lab. Let me know if there are issues.
+
 To execute the pipeline, on dott run the following:
 
 ```bash
-
 ./mitotype_pipeline.sh your.fasta plot_name
-
 
 ```
 
@@ -19,4 +19,4 @@ All output will be directed to `output/`, which will be created if it doesn't al
 
 I assume some R packages are installed: `treeio`, `tidyverse`, `ggtree`, `ape`, `stringr`.
 
-All of this could be run wherever, but paths to mr bayes and muscle are hard coded right now, so you'd need to edit that.
+All of this could be run wherever, but paths to mr bayes and muscle are hard coded right now, so you'd need to edit that if exporting this elsewhere.
