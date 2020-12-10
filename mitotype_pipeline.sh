@@ -52,7 +52,7 @@ Rscript make_mr_bayes.R
 echo " "
 echo "Mr bayes starting. This will take 10 or 15 minutes"
 
-~/bin/MrBayes/src/mb ./output/tonsa_mb.nex > ./output/mr_bayes_log.txt
+/data/programs/mb ./output/tonsa_mb.nex > ./output/mr_bayes_log.txt
 
 echo " "
 echo "Mr bayes done\n"
