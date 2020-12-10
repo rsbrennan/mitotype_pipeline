@@ -1,7 +1,7 @@
 library(ape)
 library(stringr)
 
-myseqs.fn <- "aligned.fasta" # input file
+myseqs.fn <- "./output/aligned.fasta" # input file
 myseqs.nex.fn <- "./output/tonsa.nex" # output in Nexus format
 myseqs.mb <- "./output/tonsa_mb.nex" # output in Nexus with MrBayes block
 
