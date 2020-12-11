@@ -15,7 +15,10 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
   exit 0
 fi
 
-
+if [[ ! -f "$1" ]]; then
+    echo "The fasta file "$1" does not exist. Exiting."
+    exit
+fi
 
 if [[ ! -e output ]]; then
     mkdir output
