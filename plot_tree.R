@@ -1,13 +1,15 @@
 
-library(treeio)
-library(tidyverse)
-library(ggtree)
+suppressPackageStartupMessages({
+    library(tidyverse)
+    library(ggtree)
+    library(treeio)
+
+})
 
 grouping <- read_tsv("./labels.txt") %>% distinct()
 
 tree <- read.nexus(file="./output/tonsa_mb.nex.con.tre")
 x <- as_tibble(tree)
-x
 
 dm <- left_join(x, grouping, by="label")
 
