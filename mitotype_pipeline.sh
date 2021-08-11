@@ -57,6 +57,12 @@ echo "Mr bayes starting. This will take 10 or 15 minutes"
 
 /data/programs/mb ./output/tonsa_mb.nex > ./output/mr_bayes_log.txt
 
+if grep -q "Error" ./output/mr_bayes_log.txt; then
+    echo "ERROR in Mr Bayes! Are there spaces in your fasta names? \nExiting."
+    exit
+fi
+
+
 echo " "
 echo "Mr bayes done\n"
 echo " "
