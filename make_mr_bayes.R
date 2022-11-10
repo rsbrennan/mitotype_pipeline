@@ -15,16 +15,15 @@ myseqs.nex <- readLines(myseqs.nex.fn)
 # We then write part of the MrBayes block that specifies the model.
 #GTR + I + G, from figuerra MS
 
-# set outgroup to Acar_danaEU856796
+# set outgroup to Temo_stylifera
 # help lset
 #    For example, "lset nst=6 rates=gamma" would set the model to a general model of DNA substitution (the GTR) with gamma-distributed rate variation across sites.
 
 mbblock1 <- "
 begin mrbayes;
   set autoclose=yes nowarn=yes;
-  lset nst=6 rates=invgamma ngammacat=4;
-    prset statefreqpr=fixed(empirical) brlenspr=clock:uniform;
-    outgroup Acar_danaEU856796;
+  lset nst=2 rates=invgamma ngammacat=4;
+    outgroup Temora_stylifera;
 "
 
 mbblock3 <- "

@@ -32,13 +32,12 @@ fi
 #merge new samples with reference samples
 cat "$1" \
     reference_haplotypes.fasta \
-    a_dana.fasta \
     > ./output/to_align.fasta
 
 
 # align all data
 echo "alignment starting"
-/data/programs/muscle3.8.31_i86linux32 -in ./output/to_align.fasta \
+muscle -in ./output/to_align.fasta \
                                         -out ./output/aligned.fasta
 echo "alignment done"
 echo " "
@@ -55,7 +54,7 @@ Rscript make_mr_bayes.R
 echo " "
 echo "Mr bayes starting. This will take 10 or 15 minutes"
 
-/data/programs/mb ./output/tonsa_mb.nex > ./output/mr_bayes_log.txt
+~/Documents/GEOMAR/genotyping/MrBayes-3.2.7a/src/mb ./output/tonsa_mb.nex > ./output/mr_bayes_log.txt
 
 if grep -q "Error" ./output/mr_bayes_log.txt; then
     echo "ERROR in Mr Bayes! Are there spaces in your fasta names? \nExiting."
@@ -68,7 +67,7 @@ echo "Mr bayes done\n"
 echo " "
 # HKY + I + G for sub model
 # for HKY: nst=2
-# I + G = invariable site plus discrete Gamma model- I think: rates=invgamma
+# I + G = invariable site plus discrete Gamma model: rates=invgamma
 
 
 #plot output
